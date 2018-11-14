@@ -32,7 +32,7 @@ Slave agent = new DumbSlave(
         "/home/jenkins",
         launcher)
 agent.nodeDescription = "Ansible managed Agent Node"
-agent.numExecutors = 1
+agent.numExecutors = 5
 agent.labelString = "java-agent"
 agent.mode = Node.Mode.NORMAL
 agent.retentionStrategy = new RetentionStrategy.Always()
