@@ -22,7 +22,7 @@
 
     - name: Register Jenkins Worker with Master
       jenkins_script:
-        script: "{{ lookup('file', 'templates/jenkins-worker-registration.groovy.j2') }}"
+        script: "{{ lookup('template', 'templates/jenkins-worker-registration.groovy.j2') }}"
         url: "{{ jenkins_master }}"
         user: jenkins
         password: jenkins
