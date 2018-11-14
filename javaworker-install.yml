@@ -26,6 +26,7 @@
       register: jenkins_credentials
       delegate_to: localhost
       run_once: true
+      become: false
     
     - name: Debug 
       debug:
