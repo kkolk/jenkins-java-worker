@@ -12,7 +12,7 @@ SshHostKeyVerificationStrategy hostKeyVerificationStrategy = new NonVerifyingKey
     //= new NonVerifyingKeyVerificationStrategy() // Non verifying Verification Strategy
 
 // Define a "Launch method": "Launch slave agents via SSH"
-ComputerLauncher launcher = new new hudson.plugins.sshslaves.SSHLauncher(
+ComputerLauncher launcher = new hudson.plugins.sshslaves.SSHLauncher(
         "{{ ansible_default_ipv4.address }}", // Host
         22, // Port
         "{{ jenkins_worker_credential }}", // Credentials
