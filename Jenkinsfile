@@ -7,11 +7,9 @@ node () {
     // Executing Worker Configuration
     ansiblePlaybook colorized: true,
     credentialsId: 'ssh-worker',
-    limit: "${HOST_PROVISION}",
-    installation: 'ansible',
     inventory: 'inventory/lab/hosts',
     playbook: 'javaworker-install.yml',
-    sudo: true,
-    sudoUser: 'root'
+    // sudo: true,
+    // sudoUser: 'root'
   }
 }
