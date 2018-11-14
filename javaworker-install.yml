@@ -20,11 +20,10 @@
           - git
         state: present
 
-    - name: Read credentials id for Jenkins Worker
+    - name: Register Jenkins Worker with Master
       jenkins_script:
-        script: 'println(Jenkins.instance.pluginManager.plugins)'
+        script: "{{ lookup('file', 'templates/jenkins-worker-registration.groovy.j2') }}"
         url: "{{ jenkins_master }}"
         user: jenkins
         password: jenkins
         validate_certs: no
-      register: jenkins_credentials

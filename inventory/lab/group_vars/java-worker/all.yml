@@ -3,7 +3,7 @@
 # Jenkins                                
 #------------------------------------------
 jenkins_master: https://jenkins.192.168.100.10.xip.io:8443/
-
+jenkins_worker_credential: ssh-worker
 
 
 #------------------------------------------
