@@ -8,7 +8,7 @@ node () {
     ansiblePlaybook colorized: true,
     credentialsId: 'ssh-worker',
     inventory: 'inventory/lab/hosts',
-    playbook: 'javaworker-install.yml',
+    playbook: 'javaworker-install.yml'
     // sudo: true,
     // sudoUser: 'root'
   }
