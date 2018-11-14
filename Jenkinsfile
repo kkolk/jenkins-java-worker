@@ -2,14 +2,17 @@ pipeline {
   options {
     ansiColor("xterm")
   }
+  agent {
+    node {
+      label 'master'
+    }
+  }
   // Code checkout from git.
   stages {
     stage("Lab")
     {
-      steps ('Checkout') {
+      steps {
         checkout scm
-      }
-      steps ('Execute') {
         // Executing Worker Configuration
         ansiblePlaybook(colorized: true,
           credentialsId: 'ssh-worker',
