@@ -1,6 +1,6 @@
 # Jenkins Java Worker
 This repository contains the ansible playbooks and related files 
-for the management of Jenkin's Java worker nodes.
+for the management of Jenkin's Java worker nodes for use with the Jenkin's Test Lab project.
 
 ## Overview
 
