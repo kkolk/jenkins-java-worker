@@ -1,0 +1,21 @@
+- name: Install Jenkins Java Worker Node
+  hosts: java-worker
+  connection: ssh
+  become: true
+
+  roles:
+    - role: java
+
+    - role: maven
+      maven_version: '3.6.0'
+
+  tasks:
+    - name: Install additional requirements
+      package:
+        name:
+          - ant
+          - zip
+          - unzip
+          - bzip2
+          - git
+        state: present
