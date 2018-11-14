@@ -1,3 +1,4 @@
 # ------------ Jenkins Workers -------------
 [java-worker]
 javaworker.192.168.100.30.xip.io
+javaworker2.192.168.100.31.xip.io
