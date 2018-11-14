@@ -21,14 +21,10 @@
         state: present
 
     - name: Read credentials id for Jenkins Worker
-      xml:
-        path: "{{ jenkins_master_home }}/credentials.xml"
+      jenkins_script:
+        script: 'println(Jenkins.instance.pluginManager.plugins)'
+        url: "{{ jenkins_master }}"
+        user: jenkins
+        password: jenkins
+        validate_certs: no
       register: jenkins_credentials
-      delegate_to: localhost
-      run_once: true
-      become: false
-    
-    - name: Debug 
-      debug:
-        var: jenkins_credentials
-        verbosity: 4

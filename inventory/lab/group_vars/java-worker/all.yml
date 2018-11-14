@@ -2,7 +2,7 @@
 #------------------------------------------
 # Jenkins                                
 #------------------------------------------
-jenkins_master_home: /var/lib/jenkins 
+jenkins_master: https://jenkins.192.168.100.10.xip.io:8443/
 
 
 
