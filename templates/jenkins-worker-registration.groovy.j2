@@ -13,7 +13,7 @@ SshHostKeyVerificationStrategy hostKeyVerificationStrategy = new NonVerifyingKey
 
 // Define a "Launch method": "Launch slave agents via SSH"
 ComputerLauncher launcher = new hudson.plugins.sshslaves.SSHLauncher(
-        "{{ ansible_default_ipv4.address }}", // Host
+        "{{ inventory_hostname  }}", // Host
         22, // Port
         "{{ jenkins_worker_credential }}", // Credentials
         (String)null, // JVM Options
@@ -28,12 +28,12 @@ ComputerLauncher launcher = new hudson.plugins.sshslaves.SSHLauncher(
 
 // Define a "Permanent Agent"
 Slave agent = new DumbSlave(
-        "agent-node",
+        "{{ ansible_hostname }}",
         "/home/jenkins",
         launcher)
-agent.nodeDescription = "Agent node description"
+agent.nodeDescription = "Ansible managed Agent Node"
 agent.numExecutors = 1
-agent.labelString = "agent-node-label"
+agent.labelString = "java-agent"
 agent.mode = Node.Mode.NORMAL
 agent.retentionStrategy = new RetentionStrategy.Always()
 
