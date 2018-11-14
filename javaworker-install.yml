@@ -19,3 +19,15 @@
           - bzip2
           - git
         state: present
+
+    - name: Read credentials id for Jenkins Worker
+      xml:
+        path: "{{ jenkins_master_home }}/credentials.xml"
+      register: jenkins_credentials
+      delegate_to: localhost
+      run_once: true
+    
+    - name: Debug 
+      debug:
+        var: jenkins_credentials
+        verbosity: 4
