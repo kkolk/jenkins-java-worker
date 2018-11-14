@@ -8,8 +8,7 @@ node () {
   }
   stage ('Execute') {
     // Executing Worker Configuration
-    ansiblePlaybook 
-      colorized: true,
+    ansiblePlaybook colorized: true,
       credentialsId: 'ssh-worker',
       inventory: 'inventory/lab/hosts',
       playbook: 'javaworker-install.yml'
